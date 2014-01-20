@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>ScoreKeeper</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts/scorekeeper-icon-font.css">
+    <link rel="stylesheet" href="score_keeper.css">
+    
+    <!-- import the click-counter -->
+    
+    <script src="index.html_bootstrap.dart.js"></script>
+    
+  </head>
+  <body><polymer-element name="polymer-flex-layout"> <!-- attributes="vertical align justify isContainer" -->
+  <template>
+    <link rel="stylesheet" polymer-scope="controller" href="packages/polymer_elements/polymer_flex_layout/polymer_flex_layout.css">
+    <link rel="stylesheet" polymer-scope="controller" href="packages/polymer_elements/polymer_flex_layout/polymer_flex_layout_old.css"> <!-- TODO remove old when all browsers and polyfills are updated -->
+    <link rel="stylesheet" href="packages/polymer_elements/polymer_flex_layout/polymer_flex_layout.css">
+    <content></content>
+  </template>
+  
+</polymer-element>
+<polymer-element name="polymer-flex-panel" extends="polymer-flex-layout">
+  <template>
+    <shadow></shadow>
+  </template>
+  
+</polymer-element>
+<polymer-element name="sk-game">
+  <template>
+    <link rel="stylesheet" href="elements/game.css">
+
+    <polymer-flex-panel vertical="" class="board">
+
+      <header>
+        <polymer-flex-panel>
+          <h1 flex="">ScoreKeeper</h1>
+          <div class="controls">
+            <button on-click="{{reset}}" title="Reset">
+              <i class="icon-reset"></i>
+            </button>
+            <button on-click="{{addPlayer}}" title="Add Player">
+              <i class="icon-plus"></i>
+            </button>
+          </div>
+        </polymer-flex-panel>
+      </header>
+
+      <polymer-flex-panel class="player-names">
+        <div class="right-column"></div>
+        <template repeat="{{player in players | enumerate}}">
+          <div class="player-name" flex="">
+            <button class="remove-user" on-click="{{removePlayer}}" data-player-index="{{player.index}}" tabindex="-1"><i class="icon-remove"></i></button>
+            <input type="text" value="{{player.value.name}}" class="player-{{player.index}}">
+          </div>
+        </template>
+      </polymer-flex-panel>
+ 
+      <div class="score-wrapper" flex="">
+        <polymer-flex-panel class="fillers">
+          <div class="filler right-column"></div>
+          <template repeat="{{player in players}}">
+            <div class="filler" flex=""></div>
+          </template>
+        </polymer-flex-panel>
+        <template repeat="{{round in rounds}}">
+          <polymer-flex-panel class="scores">
+            <div class="right-column">{{round.roundNumber+1}}</div>
+            <template repeat="{{player in players | enumerate}}">
+              <template if="{{player.value.scores.length >= round.roundNumber+1}}">
+                <input type="text" value="{{player.value.scores[round.roundNumber].score}}" on-keyup="{{keyupAction}}" data-player-index="{{player.index}}" data-round-number="{{round.roundNumber}}" class="player-{{player.index}} round-{{round.roundNumber}}" flex="">
+              </template>
+            </template>
+          </polymer-flex-panel>
+        </template>
+      </div>
+
+      <polymer-flex-panel class="totals">
+        <div class="total right-column"></div>
+        <template repeat="{{player in players}}">
+          <h4 class="total" flex="">{{player.total}}</h4>
+        </template>
+      </polymer-flex-panel>
+
+    </polymer-flex-panel>
+  </template>
+  
+</polymer-element>
+
+
+    <sk-game></sk-game>
+  
+
+</body></html>

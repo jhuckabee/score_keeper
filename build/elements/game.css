@@ -1,0 +1,173 @@
+/*
+  Icon Font: scorekeeper-icon-font icons
+ */)
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-plus:before,
+.icon-remove:before,
+.icon-reset:before {
+  display: inline-block;
+  font-family: "scorekeeper-icon-font";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-plus:before { content: "\f107"; }
+.icon-remove:before { content: "\f105"; }
+.icon-reset:before { content: "\f109"; }
+
+.board {
+  height: 100%;
+}
+header {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);  
+  background: #1abc89;
+}
+header h1 {
+  margin: 0;
+  padding: 10px;
+  font-weight: 600;
+}
+header .controls {
+  padding: 13px;
+}
+header .controls button {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #1abc89;
+  padding: 3px 7px;
+  font-size: 24px;
+  border-radius: 2px;
+}
+header .controls button:focus {
+  outline: none;
+}
+header .controls button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+header .controls button:active {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+input {
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  text-align: center;
+  border-radius: 0px;
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.right-column {
+  width: 20px;
+  padding: 5px;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.player-names .player-name {
+  position: relative;
+}
+.player-names .player-name button.remove-user {
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.1);
+}
+.player-names .player-name button.remove-user:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.score-wrapper {
+  position: relative;
+  min-height: 0;
+  overflow: auto;
+}
+.scores:hover {
+ background: rgba(0, 0, 0, 0.2);
+}
+.scores input {
+  background: transparent;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  border-right: none;
+  height: 40px;
+}
+.scores .right-column {
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+}
+.scores input:focus {
+  background: rgba(0, 0, 0, 0.15);
+}
+.scores:nth-child(even) input {
+  background: rgba(255, 255, 255, 0.1);
+}
+.scores:nth-child(even) input:focus {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.fillers {
+  display: block;
+  z-index: -1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+.filler {
+  height: 100%;
+  border-right: solid 1px rgba(0, 0, 0, 0.15);
+}
+
+.total {
+  margin: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+}
+@media(max-width: 400px) {
+  header h1 {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  input {
+    font-size: 14px;
+  }
+  .player-names .player-name button.remove-user {
+    font-size: 12px;
+  }
+  .total {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,26 @@
+/*
+  Icon Font: scorekeeper-icon-font font faces
+  Icons courtesy http://www.thenounproject.com
+  Licenses:
+    * icon-plus: Plus by Anas Ramadan from The Noun Project
+    * icon-reset: Refresh by Alexey  Sohrin from The Noun Project
+    * icon-remove: Delete by P.J. Onori from The Noun Project
+*/
+
+@font-face {
+  font-family: "scorekeeper-icon-font";
+  src: url("scorekeeper-icon-font.eot");
+  src: url("scorekeeper-icon-font.eot?#iefix") format("embedded-opentype"),
+       url("scorekeeper-icon-font.woff") format("woff"),
+       url("scorekeeper-icon-font.ttf") format("truetype"),
+       url("scorekeeper-icon-font.svg#scorekeeper-icon-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "scorekeeper-icon-font";
+    src: url("scorekeeper-icon-font.svg#scorekeeper-icon-font") format("svg");
+  }
+}

@@ -1,0 +1,8 @@
+name: score_keeper
+description: A sample Polymer application
+dependencies:
+    polymer: any
+    polymer_elements: any
+transformers:
+- polymer:
+    entry_points: web/index.html

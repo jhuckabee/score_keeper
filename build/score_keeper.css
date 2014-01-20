@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #1abc89;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
