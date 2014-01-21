@@ -4365,3 +4365,43 @@ build.dart --machine --changed=web/elements/game.dart
 
 build.dart finished [1034 ms]
 
+---
+build.dart --machine --changed=LICENSE --changed=README.md --changed=build/elements/game.css --changed=build/fo...
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/elements/game.css
+
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --removed=build/elements/game.css --removed=build/fonts/scorekeeper-icon-font.css --remove...
+
+build.dart finished [1208 ms]
+
+---
+build.dart --machine --changed=build/elements/game.css --changed=build/fonts/scorekeeper-icon-font.css --change...
+
+build.dart finished [1264 ms]
+
+---
+build.dart --machine --changed=web/elements/game.css
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --removed=build/elements/game.css --removed=build/fonts/scorekeeper-icon-font.css --remove...
+
+build.dart finished [1087 ms]
+
+---
+build.dart --machine --changed=web/elements/game.css
+
+build.dart finished [1173 ms]
+
+---
+build.dart --machine --changed=build/elements/game.css --changed=build/fonts/scorekeeper-icon-font.css --change...
+
+build.dart finished [1079 ms]
+
